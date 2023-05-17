@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface TheaterRepository extends Repository<Theater,Long> {
     void save(Theater theater);
-    Movie findById(Long Id);
-    List<Movie> findAll();
-    List<Movie> findAllByRegion(Region region);
+    Theater findById(Long Id);
+    List<Theater> findAll();
+    List<Theater> findAllByRegion(Region region);
 
 }
