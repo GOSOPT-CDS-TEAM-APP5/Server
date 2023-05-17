@@ -17,7 +17,7 @@ public class Region {
     private Long theaterCount;
 
     @Builder
-    private Region(String regionName,Long theaterCount{
+    public Region(String regionName,Long theaterCount){
         this.regionName=regionName;
         this.theaterCount=theaterCount;
     }
