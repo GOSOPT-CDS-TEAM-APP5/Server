@@ -26,7 +26,9 @@ public class Schedule {
     @JoinColumn(name = "theater_id")
     private Theater theater;
 
-    private String multiplex;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "multiplex_id")
+    private Multiplex multiplex;
     private String startTime;
     private String endTime;
     private String currentPeople;

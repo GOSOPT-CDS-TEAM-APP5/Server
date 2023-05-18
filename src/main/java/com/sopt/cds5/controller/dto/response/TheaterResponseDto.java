@@ -1,5 +1,6 @@
 package com.sopt.cds5.controller.dto.response;
 
+import com.sopt.cds5.domain.Multiplex;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,9 +15,9 @@ public class TheaterResponseDto {
 
     private String theaterName;
 
-    private List<ScheduleResponseDto> multiplexList;
+    public List<MultiplexResponseDto> multiplexList;
 
-    public static TheaterResponseDto of(String theaterName,List<ScheduleResponseDto> ScheduleList){
-        return new TheaterResponseDto(theaterName,ScheduleList);
+    public static TheaterResponseDto of(String theaterName,List<MultiplexResponseDto> multiplexList){
+        return new TheaterResponseDto(theaterName,multiplexList);
     }
 }

@@ -10,13 +10,13 @@ import java.util.List;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class MultiplexReseponseDto {
+public class MultiplexResponseDto {
 
     private String movieType;
     private String multiplexLocation;
     private List<ScheduleResponseDto> scheduleList;
 
-    public static MultiplexReseponseDto of(String movieType,String multiplexLocation,List<ScheduleResponseDto> scheduleList){
-       return new MultiplexReseponseDto(movieType,multiplexLocation,scheduleList);
+    public static MultiplexResponseDto of(String movieType,String multiplexLocation,List<ScheduleResponseDto> scheduleList){
+       return new MultiplexResponseDto(movieType,multiplexLocation,scheduleList);
     }
 }
