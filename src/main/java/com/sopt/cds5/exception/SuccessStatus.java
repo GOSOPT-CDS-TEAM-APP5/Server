@@ -14,8 +14,8 @@ public enum SuccessStatus {
     movie
      */
     CREATE_SUCCESS(HttpStatus.CREATED, "영화등록이 완료되었습니다."),
-    FIND_SUCCESS(HttpStatus.CREATED, "상세조회 성공"),
-    TIME_SUCCESS(HttpStatus.CREATED, "시간조회 성공")
+    FIND_SUCCESS(HttpStatus.OK, "상세조회 성공"),
+    TIME_SUCCESS(HttpStatus.OK, "시간조회 성공")
     ;
     private final HttpStatus httpStatus;
 
