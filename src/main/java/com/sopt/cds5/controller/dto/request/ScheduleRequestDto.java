@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -14,5 +15,5 @@ public class ScheduleRequestDto {
 
     private Long movieId;
     private LocalDate date;
-    private Long theaterId;
+    private List<Long> theaterId;
 }
