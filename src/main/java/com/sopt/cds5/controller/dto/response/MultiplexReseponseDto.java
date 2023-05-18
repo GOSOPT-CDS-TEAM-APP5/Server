@@ -17,6 +17,6 @@ public class MultiplexReseponseDto {
     private List<ScheduleResponseDto> scheduleList;
 
     public static MultiplexReseponseDto of(String movieType,String multiplexLocation,List<ScheduleResponseDto> scheduleList){
-       return new MultiplexReseponseDto(movieType,multiplexLocation,scheduleList)
+       return new MultiplexReseponseDto(movieType,multiplexLocation,scheduleList);
     }
 }

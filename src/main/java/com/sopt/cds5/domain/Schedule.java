@@ -26,7 +26,7 @@ public class Schedule {
     @JoinColumn(name = "theater_id")
     private Theater theater;
 
-    private Long multiplex;
+    private String multiplex;
     private String startTime;
     private String endTime;
     private String currentPeople;
