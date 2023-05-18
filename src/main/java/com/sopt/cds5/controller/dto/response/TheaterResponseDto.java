@@ -15,4 +15,8 @@ public class TheaterResponseDto {
     private String theaterName;
 
     private List<MultiplexReseponseDto> multiplexList;
+
+    public static TheaterResponseDto of(String theaterName,List<MultiplexReseponseDto> multiplexList){
+        return new TheaterResponseDto(theaterName,multiplexList);
+    }
 }

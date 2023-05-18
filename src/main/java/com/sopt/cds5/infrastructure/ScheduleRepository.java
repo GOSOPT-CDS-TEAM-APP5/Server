@@ -6,6 +6,7 @@ import com.sopt.cds5.domain.Schedule;
 import com.sopt.cds5.domain.Theater;
 import org.springframework.data.repository.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ScheduleRepository extends Repository<Schedule,Long> {
@@ -14,7 +15,7 @@ public interface ScheduleRepository extends Repository<Schedule,Long> {
 
     Schedule findById(Long Id);
     List<Schedule> findAll();
-
+    List<Schedule> findByTheaterAndDate(Theater theater, LocalDate date);
     List<Schedule> findAllByTheater(Theater theater);
     List<Schedule> findAllByMultiplex(Long multiplex);
     List<Schedule> findAllByOrderByMultiplex();

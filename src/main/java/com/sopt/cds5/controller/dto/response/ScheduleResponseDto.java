@@ -17,4 +17,7 @@ public class ScheduleResponseDto {
     private String currentPeople;
     private String maxPeople;
 
+    public static ScheduleResponseDto of(String movieType, String multiPlex, String startTime, String endTime, String currentPeople, String maxPeople) {
+        return new ScheduleResponseDto(movieType,multiPlex,startTime,endTime,currentPeople,maxPeople);
+    }
 }
