@@ -15,7 +15,7 @@ public interface ScheduleRepository extends Repository<Schedule,Long> {
 
     Schedule findById(Long Id);
     List<Schedule> findAll();
-    List<Schedule> findByTheaterAndDate(Theater theater, LocalDate date);
+    List<Schedule> findByTheaterAndDateAndMovie(Theater theater, LocalDate date,Movie movie);
     List<Schedule> findAllByTheater(Theater theater);
     List<Schedule> findAllByMultiplex(Long multiplex);
     List<Schedule> findAllByOrderByMultiplex();
