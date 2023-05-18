@@ -10,6 +10,7 @@ import com.sopt.cds5.service.TheaterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -21,8 +22,8 @@ public class TheaterController {
 
     private final TheaterService theaterService;
     private final RegionService regionService;
-    @GetMapping("/theater/{regionId}")
-    public ApiResponseDto<List<String>> getTheaterList(@PathVariable final Long regionId){
+    @GetMapping("/theater")
+    public ApiResponseDto<List<String>> getTheaterList(@RequestParam final Long regionId){
         List<Theater> theaters=theaterService.getTheaterByRegion(regionId);
         List<String> theaterNameList=new ArrayList<>();
         if(theaters.size()==0){
