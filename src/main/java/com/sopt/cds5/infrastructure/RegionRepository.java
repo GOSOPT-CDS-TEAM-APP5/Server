@@ -10,6 +10,6 @@ public interface RegionRepository extends Repository<Region, Long> {
 
     void save(Region region);
     Movie findById(Long Id);
-    List<Movie> findAll();
+    List<Region> findAll();
 
 }

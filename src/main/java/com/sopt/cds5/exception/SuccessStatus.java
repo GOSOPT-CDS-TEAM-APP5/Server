@@ -9,8 +9,17 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class SuccessStatus {
+public enum SuccessStatus {
+
+    /**
+     * 200 FIND
+     */
+    SEARCH_SUCCESS(HttpStatus.OK,"조회에 성공했습니다.");
     private final HttpStatus httpStatus;
 
     private final String message;
+
+    public int getHttpStatusCode() {
+        return httpStatus.value();
+    }
 }
