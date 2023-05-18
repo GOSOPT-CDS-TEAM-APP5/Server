@@ -9,7 +9,7 @@ import java.util.List;
 public interface RegionRepository extends Repository<Region, Long> {
 
     void save(Region region);
-    Movie findById(Long Id);
+    Region findById(Long Id);
     List<Region> findAll();
 
 }
