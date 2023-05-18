@@ -13,6 +13,6 @@ public interface ScheduleRepository extends Repository<Schedule,Long> {
 
     Schedule findById(Long Id);
     List<Schedule> findAll();
-    List<Schedule> findAllByRegion(Region region);
-    List<Schedule> findAllByRegionOrderByMultiplex();
+    List<Schedule> findAllByMultiplex(Long multiplex);
+    List<Schedule> findAllByOrderByMultiplex();
 }
