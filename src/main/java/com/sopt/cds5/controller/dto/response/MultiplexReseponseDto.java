@@ -10,9 +10,10 @@ import java.util.List;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class TheaterResponseDto {
+public class MultiplexReseponseDto {
 
-    private String theaterName;
+    private String movieType;
+    private String multiplexLocation;
+    private List<ScheduleResponseDto> scheduleList;
 
-    private List<MultiplexReseponseDto> multiplexList;
 }

@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -30,7 +31,7 @@ public class Schedule {
     private String endTime;
     private String currentPeople;
     private String maxPeople;
-    private Date date;
+    private LocalDate date;
 
-
+    private String MovieType;
 }

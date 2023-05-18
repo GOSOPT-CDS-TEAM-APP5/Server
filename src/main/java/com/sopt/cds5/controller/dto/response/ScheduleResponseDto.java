@@ -5,14 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class TheaterResponseDto {
+public class ScheduleResponseDto {
 
-    private String theaterName;
+    private String movieType;
+    private String multiPlex;
+    private String startTime;
+    private String endTime;
+    private String currentPeople;
+    private String maxPeople;
 
-    private List<MultiplexReseponseDto> multiplexList;
 }
