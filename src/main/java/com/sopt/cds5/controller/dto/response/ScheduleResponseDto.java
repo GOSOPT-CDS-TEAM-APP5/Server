@@ -11,13 +11,12 @@ import lombok.NoArgsConstructor;
 public class ScheduleResponseDto {
 
     private String movieType;
-    private String multiPlex;
     private String startTime;
     private String endTime;
     private String currentPeople;
     private String maxPeople;
 
-    public static ScheduleResponseDto of(String movieType, String multiPlex, String startTime, String endTime, String currentPeople, String maxPeople) {
-        return new ScheduleResponseDto(movieType,multiPlex,startTime,endTime,currentPeople,maxPeople);
+    public static ScheduleResponseDto of(String movieType, String startTime, String endTime, String currentPeople, String maxPeople) {
+        return new ScheduleResponseDto(movieType,startTime,endTime,currentPeople,maxPeople);
     }
 }

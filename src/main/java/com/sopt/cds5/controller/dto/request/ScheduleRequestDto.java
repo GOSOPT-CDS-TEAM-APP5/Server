@@ -16,4 +16,7 @@ public class ScheduleRequestDto {
     private Long movieId;
     private LocalDate date;
     private List<Long> theaterId;
+
+    private Long multiplexId;
+
 }
