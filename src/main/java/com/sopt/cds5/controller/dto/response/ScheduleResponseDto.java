@@ -10,13 +10,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class ScheduleResponseDto {
 
-    private String movieType;
     private String startTime;
     private String endTime;
     private String currentPeople;
     private String maxPeople;
 
-    public static ScheduleResponseDto of(String movieType, String startTime, String endTime, String currentPeople, String maxPeople) {
-        return new ScheduleResponseDto(movieType,startTime,endTime,currentPeople,maxPeople);
+    public static ScheduleResponseDto of( String startTime, String endTime, String currentPeople, String maxPeople) {
+        return new ScheduleResponseDto(startTime,endTime,currentPeople,maxPeople);
     }
 }

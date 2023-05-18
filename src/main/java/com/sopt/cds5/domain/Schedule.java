@@ -35,5 +35,4 @@ public class Schedule {
     private String maxPeople;
     private LocalDate date;
 
-    private String MovieType;
 }

@@ -42,7 +42,7 @@ public class ScheduleService {
                 List<ScheduleResponseDto> scheduleResponseDtoList=new ArrayList<>();
                 for (Schedule schedule:schedules
                      ) {
-                    scheduleResponseDtoList.add(ScheduleResponseDto.of(schedule.getMovieType(),schedule.getStartTime(),schedule.getEndTime(),schedule.getCurrentPeople(),schedule.getMaxPeople()));
+                    scheduleResponseDtoList.add(ScheduleResponseDto.of(schedule.getStartTime(),schedule.getEndTime(),schedule.getCurrentPeople(),schedule.getMaxPeople()));
                 }
                 multiplexResponseDtoList.add(MultiplexResponseDto.of(multiplex.getMultiplexType(),multiplex.getMultiplexName(),scheduleResponseDtoList));
             }
