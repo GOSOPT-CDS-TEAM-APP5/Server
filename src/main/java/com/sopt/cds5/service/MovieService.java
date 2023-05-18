@@ -43,15 +43,15 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    public MovieDetailResponseDto getMovieDetail(MovieDetailRequestDto request){
-        Optional<Movie> findMovieDetail = movieRepository.findByMovieId(request.getMovieId());
+    public MovieDetailResponseDto getMovieDetail(Long wantMovieId){
+        Optional<Movie> findMovieDetail = movieRepository.findByMovieId(wantMovieId);
         Movie findMovieEntity = findMovieDetail.get();
         return MovieDetailResponseDto.of(findMovieEntity.getMovieName(),findMovieEntity.getReservationRatio(),findMovieEntity.getScoreOfStar(),
                 findMovieEntity.getAge(),findMovieEntity.getReleaseDate(),findMovieEntity.getGenre(),findMovieEntity.getPlayFullTime(),findMovieEntity.getSynopsis()); //?!
     }
 
-    public MovieTimeResponseDto getMovieTime(MovieTimeRequestDto request){
-        Optional<Movie> findMovieTime = movieRepository.findByMovieId(request.getMovieId());
+    public MovieTimeResponseDto getMovieTime(Long wantMovieId){
+        Optional<Movie> findMovieTime = movieRepository.findByMovieId(wantMovieId);
         Movie findMovieTimeEntity = findMovieTime.get();
         return MovieTimeResponseDto.of(findMovieTimeEntity.getMovieName(), findMovieTimeEntity.getReleaseDate(),findMovieTimeEntity.getGenre(), findMovieTimeEntity.getPlayFullTime());
     }

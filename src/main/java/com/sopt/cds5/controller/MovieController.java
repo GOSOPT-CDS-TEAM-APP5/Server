@@ -32,16 +32,18 @@ public class MovieController {
         return movieService.getMovieList();
     }
 
-    @GetMapping("/detail")
+    @GetMapping("/detail/{movieId}")
     @ResponseStatus(HttpStatus.CREATED)
-    public ApiResponseDto<MovieDetailResponseDto> showMovieDetail(@RequestBody @Valid final MovieDetailRequestDto request){
-        return ApiResponseDto.success(SuccessStatus.FIND_SUCCESS,movieService.getMovieDetail(request));
+    public ApiResponseDto<MovieDetailResponseDto> showMovieDetail(
+            @PathVariable("movieId") Long movieId){
+        return ApiResponseDto.success(SuccessStatus.FIND_SUCCESS,movieService.getMovieDetail(movieId));
     }
 
-    @GetMapping("/time")
+    @GetMapping("/time/{movieId}")
     @ResponseStatus(HttpStatus.CREATED)
-    public ApiResponseDto<MovieTimeResponseDto> showMovieTime(@RequestBody @Valid final MovieTimeRequestDto request){
-        return ApiResponseDto.success(SuccessStatus.TIME_SUCCESS,movieService.getMovieTime(request));
+    public ApiResponseDto<MovieTimeResponseDto> showMovieTime(
+            @PathVariable("movieId") Long movieId){
+        return ApiResponseDto.success(SuccessStatus.TIME_SUCCESS,movieService.getMovieTime(movieId));
     }
 
 
