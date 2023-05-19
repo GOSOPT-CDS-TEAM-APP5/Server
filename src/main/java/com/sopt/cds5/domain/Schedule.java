@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -25,12 +26,13 @@ public class Schedule {
     @JoinColumn(name = "theater_id")
     private Theater theater;
 
-    private Long multiplex;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "multiplex_id")
+    private Multiplex multiplex;
     private String startTime;
     private String endTime;
     private String currentPeople;
     private String maxPeople;
-    private Date date;
-
+    private LocalDate date;
 
 }

@@ -1,10 +1,9 @@
 package com.sopt.cds5.infrastructure;
 
-import com.sopt.cds5.domain.Movie;
-import com.sopt.cds5.domain.Region;
-import com.sopt.cds5.domain.Schedule;
+import com.sopt.cds5.domain.*;
 import org.springframework.data.repository.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ScheduleRepository extends Repository<Schedule,Long> {
@@ -13,6 +12,6 @@ public interface ScheduleRepository extends Repository<Schedule,Long> {
 
     Schedule findById(Long Id);
     List<Schedule> findAll();
-    List<Schedule> findAllByMultiplex(Long multiplex);
-    List<Schedule> findAllByOrderByMultiplex();
+    List<Schedule> findByTheaterAndDateAndMovieAndMultiplex(Theater theater, LocalDate date, Movie movie, Multiplex multiplex);
+
 }
