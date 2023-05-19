@@ -27,21 +27,23 @@ public class MovieController {
         return ApiResponseDto.success(SuccessStatus.CREATE_SUCCESS, movieService.create(request));
     }
 //
-    @GetMapping("/")
+    @GetMapping("/main")
     public List<Movie> showMovieList(){ //메인에 영화 뿌리는 코드
         return movieService.getMovieList();
     }
 
-    @GetMapping("/detail")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ApiResponseDto<MovieDetailResponseDto> showMovieDetail(@RequestBody @Valid final MovieDetailRequestDto request){
-        return ApiResponseDto.success(SuccessStatus.FIND_SUCCESS,movieService.getMovieDetail(request));
+    @GetMapping("/detail/{movieId}")
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponseDto<MovieDetailResponseDto> showMovieDetail(
+            @PathVariable("movieId") Long movieId){
+        return ApiResponseDto.success(SuccessStatus.FIND_SUCCESS,movieService.getMovieDetail(movieId));
     }
 
-    @GetMapping("/time")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ApiResponseDto<MovieTimeResponseDto> showMovieTime(@RequestBody @Valid final MovieTimeRequestDto request){
-        return ApiResponseDto.success(SuccessStatus.TIME_SUCCESS,movieService.getMovieTime(request));
+    @GetMapping("/time/{movieId}")
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponseDto<MovieTimeResponseDto> showMovieTime(
+            @PathVariable("movieId") Long movieId){
+        return ApiResponseDto.success(SuccessStatus.TIME_SUCCESS,movieService.getMovieTime(movieId));
     }
 
 
