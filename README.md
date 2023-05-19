@@ -42,6 +42,7 @@
 
 <br />
 
+![image](https://github.com/GOSOPT-CDS-TEAM-APP5/Server/assets/39684920/5738b936-98bf-4c01-90fa-dc707e93b700)
 
 <hr/>
 <br />
