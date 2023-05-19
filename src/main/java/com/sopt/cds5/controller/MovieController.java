@@ -27,7 +27,7 @@ public class MovieController {
         return ApiResponseDto.success(SuccessStatus.CREATE_SUCCESS, movieService.create(request));
     }
 //
-    @GetMapping("/")
+    @GetMapping("/main")
     public List<Movie> showMovieList(){ //메인에 영화 뿌리는 코드
         return movieService.getMovieList();
     }
