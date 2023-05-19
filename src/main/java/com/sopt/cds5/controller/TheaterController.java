@@ -1,6 +1,7 @@
 package com.sopt.cds5.controller;
 
 import com.sopt.cds5.common.dto.ApiResponseDto;
+import com.sopt.cds5.controller.dto.response.TheaterDetailResponseDto;
 import com.sopt.cds5.domain.Region;
 import com.sopt.cds5.domain.Theater;
 import com.sopt.cds5.exception.ErrorStatus;
@@ -23,15 +24,15 @@ public class TheaterController {
     private final TheaterService theaterService;
     private final RegionService regionService;
     @GetMapping("/theater")
-    public ApiResponseDto<List<String>> getTheaterList(@RequestParam final Long regionId){
+    public ApiResponseDto<List<TheaterDetailResponseDto>> getTheaterList(@RequestParam final Long regionId){
         List<Theater> theaters=theaterService.getTheaterByRegion(regionId);
-        List<String> theaterNameList=new ArrayList<>();
+        List<TheaterDetailResponseDto> theaterNameList=new ArrayList<>();
         if(theaters.size()==0){
             return ApiResponseDto.error(ErrorStatus.VALIDATION_NOTFOUND);
         }
         for (Theater theater:theaters
              ) {
-            theaterNameList.add(theater.getTheaterName());
+            theaterNameList.add(TheaterDetailResponseDto.of(theater.getId(),theater.getTheaterName()));
         }
         return ApiResponseDto.success(SuccessStatus.SEARCH_SUCCESS,theaterNameList);
     }
