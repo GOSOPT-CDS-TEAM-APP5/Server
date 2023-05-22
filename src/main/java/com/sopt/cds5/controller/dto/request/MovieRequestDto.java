@@ -17,7 +17,7 @@ public class MovieRequestDto { //create에 필요한 dto입니다.
     private Long movieId;
 
     @NotNull(message = "영화제목이 존재하지 않습니다.")
-    @Pattern(regexp = "^[가-힣a-zA-Z0-9]{1,20}$", message = "영화제목 형식에 맞지 않습니다.")
+    @Pattern(regexp = "^[\\S][가-힣a-zA-Z0-9\\s]{0,20}$", message = "영화제목 형식에 맞지 않습니다.")
     private String movieName;
     @NotNull(message = "예매율이 존재하지 않습니다.")
     private float reservationRatio;
